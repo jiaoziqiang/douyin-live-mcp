@@ -60,8 +60,18 @@ def get_douyin_stream_url(url: str) -> dict:
         return {"error": f"获取直播地址失败: {str(e)}"}
 
 
-def main():
-    mcp.run()
+import sys
+
+def main(transport: str = None):
+    if transport:
+        mcp.run(transport=transport)
+    else:
+        if len(sys.argv) > 1 and sys.argv[1] == 'http':
+            mcp.run(transport='streamable-http', host='0.0.0.0', port=8000)
+        elif len(sys.argv) > 1 and sys.argv[1] == 'sse':
+            mcp.run(transport='sse', host='0.0.0.0', port=8000)
+        else:
+            mcp.run()
 
 
 if __name__ == '__main__':
