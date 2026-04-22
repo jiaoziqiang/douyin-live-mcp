@@ -19,3 +19,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuppy.packages]
 douyin_live_mcp = "douyin_live_mcp"
+
+[project.urls]
+Homepage = "https://github.com/jiaoziqiang/douyin-live-mcp"
+Repository = "https://github.com/jiaoziqiang/douyin-live-mcp"

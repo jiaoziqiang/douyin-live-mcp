@@ -12,21 +12,31 @@
 pip install douyin-live-mcp
 ```
 
-## 使用方法
+## 服务配置
 
-### 命令行
-
-```bash
-douyin-live-mcp
-```
-
-### 配置到MCP客户端
+### Stdio 配置 (推荐)
 
 ```json
 {
   "mcpServers": {
     "douyin-live": {
-      "command": "douyin-live-mcp"
+      "command": "uvx",
+      "args": ["douyin-live-mcp"]
+    }
+  }
+}
+```
+
+### Streamable HTTP 配置
+
+```json
+{
+  "mcpServers": {
+    "douyin-live": {
+      "command": "uvx",
+      "args": ["douyin-live-mcp"],
+      "transport": "streamable-http",
+      "url": "http://localhost:8000/mcp"
     }
   }
 }
