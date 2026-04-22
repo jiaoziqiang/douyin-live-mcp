@@ -1,0 +1,21 @@
+[project]
+name = "douyin-live-mcp"
+version = "0.1.0"
+description = "抖音直播推流地址获取MCP工具"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+dependencies = [
+    "requests",
+    "mcp>=1.0.0",
+]
+
+[project.scripts]
+douyin-live-mcp = "douyin_live_mcp:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuppy.packages]
+douyin_live_mcp = "douyin_live_mcp"
